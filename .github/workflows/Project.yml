@@ -4,13 +4,14 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'gradle:6.7-jdk11'
+                    image 'python-flask-docker'
                     // Run the container on the node specified at the top-level of the Pipeline, in the same workspace, rather than on a new node entirely:
                     reuseNode true
                 }
             }
             steps {
-                sh 'gradle --version'
+                sh 'docker run --name my-container -d -p 8080:8080 lvthillo/python-flask-docker'
+                sh 'docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' my-container'
             }
         }
     }
