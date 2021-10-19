@@ -9,4 +9,8 @@ jobs:
     - name: docker push
       run: |
         docker pull lvthillo/python-flask-docker
-        
+    - name: docker push
+      run: |
+        docker run --name my-container -d -p 8080:8080 lvthillo/python-flask-docker
+        sh docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' my-container
+        sh docker inspect -f '{{ .Config.Hostname }}' my-container
