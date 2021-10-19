@@ -5,12 +5,6 @@ pipeline {
             agent {
                 docker {
                     image 'python-flask-docker'
-                   
-                }
-            }
-            steps {
-                sh 'docker run --name my-container -d -p 8080:8080 lvthillo/python-flask-docker'
-                sh 'docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' my-container'
             }
         }
     }
