@@ -6,8 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: workflows/checkout@v2
     - name: docker push
       run: |
-        docker push lvthillo/python-flask-docker
+        docker pull lvthillo/python-flask-docker
         
