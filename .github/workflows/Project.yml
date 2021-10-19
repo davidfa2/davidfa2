@@ -1,10 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:14-alpine' }
+    }
     stages {
-        stage('Build') {
-            agent {
-                docker {
-                    image 'python-flask-docker'
+        stage('Test') {
+            steps {
+                sh 'node --version'
             }
         }
     }
