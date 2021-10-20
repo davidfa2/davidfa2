@@ -7,14 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: docker push
-      run:
+      run: |
         docker pull lvthillo/python-flask-docker
     - name: docker run
-      run:
+      run: |
         docker run --name my-container -d -p 8080:8080 lvthillo/python-flask-docker
     - name: docker input
-      run:
+      run: |
         inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' my-container
     - name: docker input 1
-      run:
+      run: |
         inspect -f '{{ .Config.Hostname }}' my-container
