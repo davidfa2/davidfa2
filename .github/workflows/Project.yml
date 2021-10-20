@@ -1,4 +1,4 @@
-name: Docker Series Builds
+name: python-flask-docker
 
 on: [push]
 
