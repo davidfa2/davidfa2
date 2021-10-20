@@ -12,9 +12,9 @@ jobs:
     - name: docker run
       run: |
         docker run --name my-container -d -p 8080:8080 lvthillo/python-flask-docker
-    - name: docker input
+    - name: docker outpot IP  
       run: |
         docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' my-container
-    - name: docker input 1
+    - name: docker outpot  hostname
       run: |
         docker inspect -f '{{ .Config.Hostname }}' my-container
