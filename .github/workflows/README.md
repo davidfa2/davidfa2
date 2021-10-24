@@ -14,9 +14,9 @@ name: docker pull
         docker run --name my-container -d -p 8080:8080 lvthillo/python-flask-docker
         
    run the commend for geeting thr IP from the image app
-           name: docker output IP  
+           name - docker output IP  
    run 
-            docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' my-container
+   docker inspect -f '{{range .NetworkS ttings.Networks}}{{.IPAddress}}{{end}}' my-container
             
    getting the hostname from the runing image 
    
