@@ -23,4 +23,4 @@ name: docker pull
    run 
         docker inspect -f '{{ .Config.Hostname }}' my-container
         
-        next steps is run the Project.yml repo on git Actions and verify that  all the commands running without errors
+  next steps is run the Project.yml repo on git Actions and verify that  all the commands running without errors
