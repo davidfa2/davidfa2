@@ -17,4 +17,4 @@ jobs:
         docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' my-container
     - name: docker output  hostname
       run: |
-        docker inspect -f ' .Config.Hostname }}' my-container
+        docker inspect -f '{{ .Config.Hostname }}' my-container
